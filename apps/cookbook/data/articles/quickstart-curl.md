@@ -30,6 +30,8 @@ export OPENAI_API_KEY=YOUR_API_KEY
 
 请务必保护您的API密钥，不要将其泄露给未经授权的人。
 
+
+
 #### 对于MacOS，以下是如何在终端中设置API密钥的步骤：
 
 - 打开终端：您可以在"应用程序"文件夹中找到终端，或使用Spotlight（Command + Space）进行搜索。
@@ -59,7 +61,7 @@ export OPENAI_API_KEY=YOUR_API_KEY
 
     ```
     source ~/.zshrc
-```
+    ```
 
 - 验证设置：在终端中键入以下命令来验证设置，它应该显示您的API密钥：
     ```
