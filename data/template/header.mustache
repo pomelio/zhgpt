@@ -1,4 +1,6 @@
 
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <div class="relative min-h-screen" x-data="{ 
         dark_mode: $persist(true).as('dark_mode'),
@@ -62,7 +64,8 @@
 
                     <!-- website navi links -->
                     <div class="flex items-center">
-                        
+                        <!-- Place this tag where you want the button to render. -->
+                        <a class="github-button" href="https://github.com/pomelio/zhgpt" data-icon="octicon-star" aria-label="Star pomelio/zhgpt on GitHub">Star</a>
                     
                         <!-- theme selection placeholder -->
                         <button @click="dark_mode = ! dark_mode" data-tooltip-target="tooltip-toggle" type="button"
