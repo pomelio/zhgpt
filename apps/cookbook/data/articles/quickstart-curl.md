@@ -32,7 +32,7 @@ export OPENAI_API_KEY=YOUR_API_KEY
 
 
 
-#### 对于MacOS，以下是如何在终端中设置API密钥的步骤：
+#### a. 对于MacOS，以下是如何在终端中设置API密钥的步骤：
 
 - 打开终端：您可以在"应用程序"文件夹中找到终端，或使用Spotlight（Command + Space）进行搜索。
 
@@ -70,7 +70,7 @@ export OPENAI_API_KEY=YOUR_API_KEY
 
 这将显示您的API密钥，表示您已成功设置了环境变量。确保保护好您的API密钥，不要将其泄露给未经授权的人。
 
-#### 对于Windows，以下是如何在命令提示符中设置API密钥的步骤：
+#### b. 对于Windows，以下是如何在命令提示符中设置API密钥的步骤：
 
 
 - 打开命令提示符：您可以通过在开始菜单中搜索"cmd"来找到它。
