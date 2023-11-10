@@ -1,6 +1,6 @@
 import ext.web as web;
 import std.string as str;
-
+import ext.github as github;
 
 let app = {};
 let app_json = github.get_app_content('/app.json');
