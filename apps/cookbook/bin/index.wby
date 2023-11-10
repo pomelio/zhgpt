@@ -19,7 +19,7 @@ if (app_len <= len(web_path)) {
 
 if app_path == "/"{
   dispatch(__APP__, '/article', {project, app});
-} eslif str.ends_with(app_path, '.md') {
+} elsif str.ends_with(app_path, '.md') {
   dispatch(__APP__, '/article', {project, app});
 } elsif str.starts_with(app_path, '/public') {
   web.send_file(__APP__, app_path);
