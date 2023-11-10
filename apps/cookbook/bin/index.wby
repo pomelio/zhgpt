@@ -16,7 +16,6 @@ if (app_len >= web_path) {
   app_path = str.substring(web_path, app_len);
 }
 
-
 if str.ends_with(app_path, '.md') {
   dispatch(__APP__, '/article', {app});
 } elsif str.starts_with(app_path, '/public') {
