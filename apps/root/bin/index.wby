@@ -14,14 +14,14 @@ let method = web.method();
 
 let app = array.find(apps, |a| => str.starts_with(web_path, '/' + a));
 
-if web_path == '/' {
-  let project = {};
-  let project_json = github.get_global_content('/project.json');
-  if project_json {
-      project = parse_json(project_json);
-  }
+let project = {};
+let project_json = github.get_global_content('/project.json');
+if project_json {
+    project = parse_json(project_json);
+}
 
-  dispatch(project['homepage']['app'], project['homepage']['path'], {});
+if web_path == '/' {
+  dispatch(project['homepage']['app'], project['homepage']['path'], {project});
 }elsif app {
   dispatch(app, '/index', {project});
 } elsif web_path == '/login' {
