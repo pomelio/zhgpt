@@ -23,7 +23,7 @@ if web_path == '/' {
 
   dispatch(project['homepage']['app'], project['homepage']['path'], {});
 }elsif app {
-  dispatch(app, '/index', {});
+  dispatch(app, '/index', {project});
 } elsif web_path == '/login' {
   dispatch(__APP__, '/auth/login', {});
 } elsif web_path == '/user/like' {

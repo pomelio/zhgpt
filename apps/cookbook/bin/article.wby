@@ -125,12 +125,6 @@ fn get_doc_name() {
 }
 
 
-let project = {};
-let project_json = github.get_global_content('/project.json');
-if project_json {
-  project = parse_json(project_json);
-}
-
 let doc_name = get_doc_name();
 
 
