@@ -7,7 +7,7 @@
 
 ## 当前困难
 - 需要更多人参与翻译, 我(Jay)一个人力量明显不足
-- 需要一个熟悉Github流程管理的人来维护这个Repository, 不断的处理更新. 我(Jay)不擅长Github管理.
+- 需要一个熟悉Github流程管理的人来维护这个Repository, 不断的处理更新. 我(Jay)不擅长Github管理.一旦找到, 我就Transfer
 
 
 
