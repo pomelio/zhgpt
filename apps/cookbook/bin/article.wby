@@ -114,14 +114,20 @@ fn find_prev_next(app, md) {
 fn get_doc_name() {
 
   let web_path = web.path();
+  if web_path == "/" {
+    return app['homepage'];
+  } else {
+    let fidx = str.last_index_of(web_path, '/');
+    if fidx == -1 {
+      throw({
+        message: 'markdown not found.'
+      });
+    }
+    return str.substring(web_path, fidx + 1);
 
-  let fidx = str.last_index_of(web_path, '/');
-  if fidx == -1 {
-    throw({
-      message: 'markdown not found.'
-    });
   }
-  return str.substring(web_path, fidx + 1);
+
+  
 }
 
 
