@@ -1,0 +1,106 @@
+import ext.github as github;
+import std.array as array;
+import ext.mustache as mch;
+import ext.markdownit as md;
+import ext.web as web;
+import std.date as dt;
+
+import modules.common as common;
+
+let project = {};
+let project_json = github.get_global_content('/project.json');
+if project_json {
+    project = parse_json(project_json);
+}
+
+let app = {};
+let app_json = github.get_app_content('/app.json');
+if app_json {
+  app = parse_json(app_json);
+}
+
+
+
+let side_bar_html = common.render_sidebar(app);
+
+let users = [];
+let users_path = '/users.json';
+
+let users_json = github.get_global_content(users_path);
+if users_json {
+  users = parse_json(users_json);
+}
+
+let user_id = __PARAMS__['user_id'];
+
+if !user_id {
+  throw({
+    message: 'user_id is not found.'
+  });
+}
+
+let user = array.find(users, |u| => u['id'] == user_id);
+
+if !user {
+  throw({
+    message: 'user is not found.'
+  });
+}
+
+let profiles = [];
+let profiles_path = '/profiles.json';
+
+let profiles_json = github.get_global_content(profiles_path);
+if profiles_json {
+  profiles = parse_json(profiles_json);
+}
+
+let fprofile = array.find(profiles, |u| => u['user_id'] == user_id);
+
+let profile = '';
+let metas = {};
+
+if fprofile {
+  let md_result = md.render_source(fprofile['value']);
+  profile = md.get_html(md_result);
+  metas = md.get_metas(md_result);
+}
+
+
+let comments = [];
+
+let comments_json = github.get_global_content('/comments.json');
+if comments_json {
+  comments = parse_json(comments_json);
+}
+
+comments = array.filter(comments, |c| => c['user_id'] == user_id);
+
+let comments_count = len(comments);
+
+let comments_html = [];
+
+mch.init('/template/user/user-comment.mustache');
+
+for (let i = 0; i < comments_count; i++) {
+  let comment = comments[i];
+  let md_comment_result = md.render_source(comment['value']);
+  let content = md.get_html(md_comment_result);
+  let metas = md.get_metas(md_comment_result);
+  let comment_time = dt.from_now(dt.from_number(comment['create_time']));
+  let comment_link = "/" + comment['clazz'] + "/" + comment['doc'];
+  let comment_html = mch.render();
+  array.push(comments_html, comment_html);
+}
+
+comments_html = array.join(comments_html, '');
+
+
+let header_html = mch.render_global_template('/template/header.mustache');
+
+let footer_html = common.render_foot_html(project);
+
+let html = mch.render_template('/template/user/profile.mustache');
+
+web.body(html);
+

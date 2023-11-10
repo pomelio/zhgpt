@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+	<title>Pagwe Cloud</title>
+    <meta name="og:title" content="Pagwe Cloud">
+	<meta name="twitter:title" content="Pagwe Cloud">
+
+    <meta name="description" content="The Pagwe Serverless cloud uses Github as a cloud disk to run your programs and save your data.">
+	<meta name="og:description" content="The Pagwe Serverless cloud uses Github as a cloud disk to run your programs and save your data.">
+	<meta name="twitter:description" content="The Pagwe Serverless cloud uses Github as a cloud disk to run your programs and save your data.">
+	
+    <meta name="twitter:card" content="summary" />
+	<meta name="twitter:image" content="https://www.pagwe.net/public/images/pagwe_cloud.jpeg">
+
+    <meta name="og:type" content="article" />
+	<meta name="og:url" content="https://www.pagwe.net">
+	<meta name="og:image" content="https://www.pagwe.net/public/images/pagwe_cloud.jpeg">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/android-chrome-192x192.png">
+	<link rel="icon" type="image/png" sizes="512x512"  href="/android-chrome-512x512.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16.png">
+	<link rel="manifest" href="/public/images/site.webmanifest">
+	 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+   
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind-dark.min.css" integrity="sha512-5qCImO4bnvlpsqNsYuZEHlzJhEN3MBqd3GZp0QCJS0gVNq3Q+MT9Msw8c4UT2j5Cuq/29kz3jCmgYJpekNqSMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <!-- Alpine Plugins -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+ 
+    <!-- Alpine Core -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <link rel="stylesheet" href="/public/css/github-markdown.css">
+<style>
+	
+	pre {
+		tab-size: 4;
+		counter-reset: linecounter;
+		padding: 0;
+		font-size: 16px;
+		line-height: 16px;
+	}
+	pre span.line {
+		counter-increment: linecounter;
+		line-height: 16px;
+	}
+	pre span.line::before {
+		content: counter(linecounter);
+		width: 30px;
+		display: inline-block;
+		border-right: 1px dotted #ccc;
+		padding-right: 3px;
+		margin-right: 5px;
+		text-align: left;
+		font-size: 11px;
+		line-height: 16px;
+	}
+</style>
+
+
+
+</head>
+
+
+<body>
+	{{{header_html}}}
+
+    <div class="flex pt-16 bg-gray-50 dark:bg-gray-900">
+        {{{side_bar_html}}}
+        <div class="w-full lg:px-20 lg:ml-80">
+            <div class="flex justify-center">
+                <a href="/cookbook/what_platform_is.md">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <img class="rounded-t-lg" src="/public/images/pagwe_cloud.jpeg" alt="pagwe cloud" />
+                        <div class="p-5">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Pagwe Cloud</h5>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            The Pagwe Serverless cloud uses Github as a cloud disk to run your programs and save your data.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-10 p-5">
+                <a href="/cookbook/cloud_os.md">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <div class="p-5">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Cloud OS</h5>
+                            
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            The Cloud OS includes APIs to perform network computing on Serverless environment. It includes APIs to access network resources such as third-party storage, user authentication, email and other services.
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/cookbook/wallaby_lang.md">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <div class="p-5">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Wallaby Language</h5>
+                            
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            Wallaby Language is a functional language that draws on the concise and clear syntax of programming languages such as JS ES zig. It also optimizes IO to ensure high-speed running of programs to handle HTTP requests.
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/cookbook/github_integration.md">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <div class="p-5">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Github as cloud disk</h5>
+                            
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            Pagwe helps users to control their own programs and their own data through GitHub repositories. The web app program is written in wallaby language, and the program is saved in the user's own GitHub repository. The data collected by the program can also be saved in the GitHub repository, such as user registration data and comments. Information data, likes, etc. The code of all programs is saved in GitHub.
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/cookbook/debug.md">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <div class="p-5">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Online remote Debugging</h5>
+                            
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            The Web Admin Portal includes a debugger. The debugger can intercept the HTTP requests of the Web App and pause the program execution at the beginning or at the breakpoint set by the user. The user can also query the current variables values ​​of the program running. The user can let the program single Step execution or execute the program to the next breakpoint.
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/cookbook/cookbook.md">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <div class="p-5">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Open source Killer Apps</h5>
+                            
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                Blog is an open source social web app. It supports Google and GitHub login. It supports documents in Markdown format. Users can leave messages and like functions. The source code and generated data of the App are saved in the user's own Github repository.
+                            </p>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                Cookbook is a document hosting App. Users can save Markdown documents on Github and organize a document website through Cookbook App.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/pricing">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <div class="p-5">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Cloud for Person and Small business</h5>
+                            
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            The target users of Pagwe cloud are ordinary people and small businesses. Pagwe reduces computing costs and provides competitively priced computing services by sharing computing resources with many individual users and small businesses.
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a>
+
+
+            </div>
+        
+
+            
+			
+	        {{{footer_html}}}	
+
+        </div>
+    </div>
+
+</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+import ext.web as web;
+import std.string as str;
+import std.array as array;
+import ext.github as github;
+
+let apps = [
+  'cookbook',
+  'blog'
+];
+
+
+
+let web_path = web.path();
+let method = web.method();
+
+let app = array.find(apps, |a| => str.starts_with(web_path, '/' + a));
+
+if web_path == '/' {
+  let project = {};
+  let project_json = github.get_global_content('/project.json');
+  if project_json {
+      project = parse_json(project_json);
+  }
+
+  dispatch(project['homepage']['app'], project['homepage']['path'], {});
+}elsif app {
+  dispatch(app, '/index', {});
+} elsif web_path == '/login' {
+  dispatch(__APP__, '/auth/login', {});
+} elsif web_path == '/user/like' {
+  dispatch(__APP__, '/user/like', {});
+} elsif method == 'GET' && web.match('/profile/:user_id') {
+  dispatch(__APP__, '/user/profile', {});
+} elsif method == 'POST' && web_path== '/profile/save' {
+  dispatch(__APP__, '/user/profile_save', {});
+} elsif method == 'GET' && web_path == '/users' {
+  dispatch(__APP__, '/user/users', {});
+} elsif method == 'GET' && web_path == '/messages' {
+  dispatch(__APP__, '/comment/comments', {});
+} elsif method == 'GET' && str.starts_with(web_path, '/public') {
+  web.send_file(__APP__, web_path);
+} elsif web_path == '/auth/github' {
+  dispatch(__APP__, '/auth/github', {});
+} elsif web_path == '/auth/github/callback' {
+  dispatch(__APP__, '/auth/callback', {from: 'github'});
+} elsif web_path == '/auth/google' {
+  dispatch(__APP__, '/auth/google', {});
+} elsif web_path == '/auth/google/callback' {
+  dispatch(__APP__, '/auth/callback', {from:'google'});
+} elsif method == 'POST' && web_path == '/comment/save' {
+  dispatch(__APP__, '/comment/save', {});
+} elsif method == 'POST' && web_path == '/comment/remove' {
+  dispatch(__APP__, '/comment/remove', {});
+} elsif method == 'GET' &&  web.match('/comment/:id') {
+  dispatch(__APP__, '/comment/get', {});
+} else {
+  dispatch(__APP__, '/template', {});
+}

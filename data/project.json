@@ -1,0 +1,21 @@
+{
+    "title": "zhgpt",
+    "website": "https://zhgpt.pagwe.net",
+    "image": "/public/images/pagwe-logo.png",
+    "homepage": {
+        "app": "cookbook",
+        "path": "/index"
+    },
+    
+    "footer":{
+        "links":{
+            "Terms and conditions": "/terms",
+            "Privacy Policy": "/privacy"
+        },
+        "socials": {
+            "twitter": "https://twitter.com/pagwego",
+            "github": "https://github.com/pagwego"
+        }
+    }
+
+}

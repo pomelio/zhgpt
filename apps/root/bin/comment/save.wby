@@ -1,0 +1,48 @@
+import ext.web as web;
+import ext.github as github;
+import std.array as array;
+import ext.jwt as jwt;
+import std.date as date;
+
+
+let token = jwt.verify();
+
+let user_id = token['id'];
+
+let {doc, id, clazz, value} = web.request_body();
+if !id {
+  id = uuid();
+}
+
+let dt = date.from_number();
+let create_time = date.value_of(dt);
+
+let comment = {
+    id,
+    clazz,
+    user_id,
+    doc,
+    value,
+    create_time
+};
+
+let comment_txt = stringify_json(comment);
+
+let comment_docs_path = '/comments.json';
+let comment_docs = [];
+
+let comment_docs_json = github.get_global_content(comment_docs_path);
+if comment_docs_json {
+  comment_docs = parse_json(comment_docs_json);
+}
+
+let fcomment = array.find(comment_docs, |u| => u['id'] == comment['id']);
+if fcomment {
+  fcomment['value'] = value;
+} else {
+  array.unshift(comment_docs, comment);
+}
+
+github.save_global_text(comment_docs_path, stringify_json(comment_docs));
+
+web.body(comment);

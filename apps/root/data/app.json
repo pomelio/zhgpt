@@ -1,0 +1,13 @@
+{
+    "login":{
+        "github": true,
+        "google": true
+    },
+    "navi": {
+        "📖 Docs": "/cookbook/what_platform_is.md",
+        "💎 Pricing": "/pricing",
+        "📃 Blog": "/blog/",
+        "👩🏻‍🦰 Users": "/users",
+        "💬 Messages": "/messages"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "homepage": "introduction.md",
+    "navi": [
+        {
+            "title": "➤ Get Started",
+            "topics": [
+                {
+                    "title": "Introduction",
+                    "md": "introduction.md"
+                },
+                {
+                    "title": "Quickstart",
+                    "md": "quickstart.md"
+                },
+                {
+                    "title": "Quickstart - CURL",
+                    "md": "quickstart-curl.md"
+                },
+                {
+                    "title": "Quickstart - Python",
+                    "md": "quickstart-python.md"
+                },
+                {
+                    "title": "Quickstart - Node JS",
+                    "md": "quickstart-nodejs.md"
+                }
+            ]
+        }
+    ]
+}
