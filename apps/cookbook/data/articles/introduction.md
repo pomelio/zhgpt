@@ -4,6 +4,7 @@ author: Jay
 ---
 
 # 介绍
+这里是chatgpt中文学习者社区. 目标是共同学习和交流经验.
 
 寻找ChatGPT？请前往chat.openai.com。
 OpenAI API可以应用于几乎任何任务。我们提供一系列具有不同功能和价格点的模型，以及微调自定义模型的能力。
